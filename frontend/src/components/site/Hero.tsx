@@ -92,7 +92,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="glass-card rounded-[2rem] p-6 sm:p-8 md:px-12 py-8 flex flex-col items-center text-center w-full relative overflow-hidden shadow-2xl"
+          className="bg-white/90 md:bg-white/70 backdrop-blur-xl border border-white/50 rounded-[2rem] p-6 sm:p-8 md:px-12 py-8 flex flex-col items-center text-center w-full relative overflow-hidden shadow-2xl"
         >
           <motion.div
             initial={{ opacity: 0, y: 10 }}

@@ -77,7 +77,7 @@ function ContactPage() {
                 <c.icon className="h-5 w-5" />
               </div>
               <p className="mt-5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{c.label}</p>
-              <p className="mt-1 font-display text-lg font-semibold text-foreground">{c.value}</p>
+              <p className="mt-1 font-display text-lg font-semibold text-foreground break-all">{c.value}</p>
             </a>
           ))}
         </div>

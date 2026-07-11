@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
-import { Loader2, Download, ExternalLink } from 'lucide-react';
+import { Loader2, Download } from 'lucide-react';
 
 export default function Applications() {
   const [apps, setApps] = useState<any[]>([]);
@@ -12,7 +12,7 @@ export default function Applications() {
 
   async function fetchApps() {
     setLoading(true);
-    const { data, error } = await supabase
+    const { data } = await supabase
       .from('applications')
       .select('*, jobs(title, company)')
       .order('created_at', { ascending: false });
@@ -22,7 +22,7 @@ export default function Applications() {
   }
 
   async function downloadCV(cvUrl: string) {
-    const { data, error } = await supabase.storage.from('resumes').createSignedUrl(cvUrl, 60);
+    const { data } = await supabase.storage.from('resumes').createSignedUrl(cvUrl, 60);
     if (data?.signedUrl) {
       window.open(data.signedUrl, '_blank');
     }

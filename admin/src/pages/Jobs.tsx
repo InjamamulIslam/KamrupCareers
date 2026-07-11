@@ -25,7 +25,7 @@ export default function Jobs() {
 
   async function fetchJobs() {
     setLoading(true);
-    const { data, error } = await supabase.from('jobs').select('*').order('created_at', { ascending: false });
+    const { data } = await supabase.from('jobs').select('*').order('created_at', { ascending: false });
     if (data) setJobs(data);
     setLoading(false);
   }

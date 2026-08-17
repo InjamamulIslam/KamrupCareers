@@ -70,6 +70,8 @@ INSERT INTO storage.buckets (id, name, public) VALUES ('resumes', 'resumes', fal
 -- Storage Policy: Allow public to upload to resumes bucket
 CREATE POLICY "Allow public upload" ON storage.objects FOR INSERT TO public WITH CHECK (bucket_id = 'resumes');
 
+-- Storage Policy: Allow admins to download/view resumes
+CREATE POLICY "Admin can view resumes" ON storage.objects FOR SELECT TO authenticated USING (bucket_id = 'resumes');
 -- ============================================================
 -- 5. Site Settings Table (key-value store for admin control)
 -- ============================================================
